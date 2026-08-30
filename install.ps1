@@ -16,5 +16,6 @@ if (Test-Path "$dest\chrome\userContent.css") { Copy-Item "$dest\chrome\userCont
 Copy-Item "$repo\chrome\userChrome.css" "$dest\chrome\userChrome.css" -Force
 Copy-Item "$repo\chrome\userContent.css" "$dest\chrome\userContent.css" -Force
 Copy-Item "$repo\user.js" "$dest\user.js" -Force
+if (Test-Path "$repo\containers.json") { Copy-Item "$repo\containers.json" "$dest\containers.json" -Force; Write-Host "  applied containers.json (4: Personal/Work/Banking/Shopping)" -ForegroundColor Green }
 Write-Host "  applied user.js + chrome/*.css" -ForegroundColor Green
 Write-Host "Restart LibreWolf to load." -ForegroundColor Yellow
