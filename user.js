@@ -218,8 +218,11 @@ user_pref("findbar.highlightAll", true);
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
 
-// FoxOne theme
+// Stylesheets
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+// Disable letterboxing (dark border around webpages)
+user_pref("privacy.resistFingerprinting.letterboxing", false);
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
