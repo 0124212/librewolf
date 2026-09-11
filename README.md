@@ -1,10 +1,10 @@
 # librewolf
 
-Portable LibreWolf theming — **Betterfox `152`** + **FoxOne `3.5.3`** (Gruvbox Dark) — restore your LibreWolf *exactly* every time or push updates.
+Portable LibreWolf theming — **Betterfox `152`** + **qutefox-minimal** (compact one-liners + autohide toolbars) — restore your LibreWolf *exactly* every time or push updates.
 
 - **`user.js`** → Betterfox + `toolkit.legacyUserProfileCustomizations.stylesheets=true` + prefs
-- **`chrome/userChrome.css`** → FoxOne one-line layout, Gruvbox `#282828` / `#3c3836` / `#fabd2f`, dynamic bookmarks, popups
-- **`chrome/userContent.css`** → new-tab / `about:` pages themed
+- **`chrome/userChrome.css`** → qutefox-minimal: JetBrains Mono tabs/urlbar, 26px tabs, square buttons, autohide bookmarks + toolbars (500ms)
+- **`chrome/userContent.css`** → dark `about:home` / `about:newtab` / `about:blank` / `about:privatebrowsing` (`#1a1b26`)
 - Extensions kept separate (install via LibreWolf, listed below)
 
 ## Profile source
@@ -48,8 +48,8 @@ git -C $env:USERPROFILE\librewolf pull; powershell $env:USERPROFILE\librewolf\in
 
 ## What's tracked
 
-- `user.js` — Betterfox overrides + FoxOne flag
-- `chrome/*.css` — full theming (131k + 10k)
+- `user.js` — Betterfox overrides
+- `chrome/*.css` — qutefox-minimal + dark newtab (~13k total)
 - `profiles.ini.example` — reference
 
 ## What's NOT tracked (intentionally)
@@ -68,15 +68,9 @@ git -C $env:USERPROFILE\librewolf pull; powershell $env:USERPROFILE\librewolf\in
 
 Install extensions manually after profile restore.
 
-## FoxOne config quick edit
+## qutefox-minimal quick edit
 
-`chrome/userChrome.css:16` — five palette vars:
-
-```css
---uc-color-base: #282828; --uc-color-surface: #3c3836; --uc-color-accent: #fabd2f;
-```
-
-Toggle ` --uc-rounded: 0→1` for rounded corners, ` --uc-dynamic-bookmarks: 1→0` to disable floating bookmarks bar.
+Top of `chrome/userChrome.css` (`:root`): tab/urlbar font, `--urlbar-height-setting: 22px`, `--tab-min-height: 26px`, square buttons, tight paddings. Bookmarks + toolbars autohide via the bundled snippet (`--uc-autohide-toolbox-delay: 500ms`, `--uc-toolbox-rotation: 82deg`) — raise the delay if the bar hides too eagerly.
 
 ## Betterfox
 
